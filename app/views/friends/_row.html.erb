@@ -1,0 +1,14 @@
+<tr id="<%= dom_id friend %>">
+  <th scope="row"><%= friend.id %></th>
+  <td><%= link_to friend.first_name + " " + friend.last_name, friend_path(friend) %></td>
+  <td><%= friend.email %></td>
+  <td><%= friend.phone %></td>
+  <td><%= friend.twitter %></td>
+  <td><%= friend.user_id %></td>
+  <td>
+    <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-outline-primary btn-sm" %>
+  </td>
+  <td>
+    <%= button_to "Delete", friend, method: :delete, form: {data: { turbo_confirm: "Are you want to delete this record?" }}, class: "btn btn-outline-secondary btn-sm" %>
+  </td>
+</tr>
